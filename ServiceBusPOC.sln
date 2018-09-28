@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceBusPOC.Topic.Publish
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceBusPOC.Topic.Subscriber", "ServiceBusPOC.Topic.Subscriber\ServiceBusPOC.Topic.Subscriber.csproj", "{E216750E-E336-4C82-9F8E-E4BD475D53A9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceBusPOC.Sender.HTTP", "ServiceBusPOC.Sender.HTTP\ServiceBusPOC.Sender.HTTP.csproj", "{D4BDEE96-0CD3-45AA-82AC-F331F2D3AF7E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{E216750E-E336-4C82-9F8E-E4BD475D53A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E216750E-E336-4C82-9F8E-E4BD475D53A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E216750E-E336-4C82-9F8E-E4BD475D53A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4BDEE96-0CD3-45AA-82AC-F331F2D3AF7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4BDEE96-0CD3-45AA-82AC-F331F2D3AF7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4BDEE96-0CD3-45AA-82AC-F331F2D3AF7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4BDEE96-0CD3-45AA-82AC-F331F2D3AF7E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
