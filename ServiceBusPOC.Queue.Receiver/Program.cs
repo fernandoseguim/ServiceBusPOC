@@ -3,13 +3,14 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Azure.ServiceBus;
+using Newtonsoft.Json;
 using ServiceBusPOC.Shared;
 
 namespace ServiceBusPOC.Queue.Receiver
 {
     internal class Program
     {
-        private const string QUEUE_NAME = "service-bus-queue-poc";
+        private const string QUEUE_NAME = "poc-basic-queue";
         private static IQueueClient queueClient;
 
         private static void Main(string[] args)
@@ -39,7 +40,10 @@ namespace ServiceBusPOC.Queue.Receiver
 
         private static async Task ProcessMessagesAsync(Message message, CancellationToken token)
         {
-            Console.WriteLine($"Received message: SequenceNumber:{message.SystemProperties.SequenceNumber} Body:{Encoding.UTF8.GetString(message.Body)}");
+            var order = JsonConvert.DeserializeObject<Order>(Encoding.UTF8.GetString(message.Body));
+
+            Console.WriteLine($"New order:{ order.OrderId }");
+            
             await queueClient.CompleteAsync(message.SystemProperties.LockToken);
         }
 

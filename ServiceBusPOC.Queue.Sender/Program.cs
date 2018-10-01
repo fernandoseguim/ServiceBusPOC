@@ -2,13 +2,14 @@
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Azure.ServiceBus;
+using Microsoft.Azure.ServiceBus.Primitives;
 using ServiceBusPOC.Shared;
 
 namespace ServiceBusPOC.Queue.Sender
 {
     internal class Program
     {
-        private const string QUEUE_NAME = "service-bus-queue-poc";
+        private const string QUEUE_NAME = "poc-standard-queue";
         private static IQueueClient queueClient;
 
         private static void Main(string[] args)
@@ -18,8 +19,11 @@ namespace ServiceBusPOC.Queue.Sender
 
         private static async Task MainAsync()
         {
-            const int NUMBER_OF_MESSAGES = 1000;
-            queueClient = new QueueClient(ServiceBusSettings.ConnectionString, QUEUE_NAME);
+            const int NUMBER_OF_MESSAGES = 10;
+            var tokenProvider = TokenProvider.CreateManagedServiceIdentityTokenProvider();
+            
+            
+            //queueClient = new QueueClient(ServiceBusSettings.ConnectionString, QUEUE_NAME);
 
             AddHeader();
 
